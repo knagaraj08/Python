@@ -8,7 +8,7 @@ mydb = mysql.connector.connect(
 
 )
 
-
+# curser is an object that is used to make the connection for executing SQL queries
 
 mycursor = mydb.cursor()
 
@@ -29,6 +29,13 @@ mycursor = mydb.cursor()
 
 # mycursor.execute("ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY")
 
-mycursor.execute("DESCRIBE customers")
-for i in mycursor:
+# mycursor.execute("DESCRIBE customers")
+
+mycursor.execute("SELECT * FROM customers")
+
+
+
+
+# fetchall() it fetches all(remaining rows of the query result )
+for i in mycursor.fetchall():
     print(i)
