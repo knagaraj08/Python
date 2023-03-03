@@ -9,7 +9,7 @@ def search(arr,X,n):
     return -1
 
 
-n = int(input("Enter the size of both arrays "))
+n = int(input("Enter the size of array "))
 
 a1 = []
 
@@ -21,4 +21,6 @@ for i in range(n):
 
 x = int(input("Enter the ele to search: "))
 
-search(a1,x,n)
+res = search(a1,x,n)
+
+print(res)
