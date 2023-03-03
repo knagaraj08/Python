@@ -16,5 +16,5 @@ mycol = mydb["customers"]
 # x = mycol.find_one()
 # print(x)
 
-for x in mycol.find({}, {"name":1,"address":1 }):
+for x in mycol.find({}, {"_id":1,"name":1,"address":1 }):
     print(x)

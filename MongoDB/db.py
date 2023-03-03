@@ -1,12 +1,20 @@
+''''
+MongoDB is a NoSql database that stores data in the BSON format i.e (Binary JSON)
+'''
+
 import pymongo
 
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")  #27017 is the default port
 
 mydb = myclient["mydatabase"]
 
 
 
 mycollection = mydb["customers"]
+
+# these collections have the data as in the form of dictionary know as postss
+
+# _id is used to access the posts
 
 # mydict = {"name": "John", "address": "Highway 37" }
 
@@ -36,6 +44,9 @@ mylist = [
   { "_id": 13, "name": "Chuck", "address": "Main Road 989"},
   { "_id": 14, "name": "Viola", "address": "Sideway 1633"}
 ]
+
+
+# so _id above basically acts as a primary key
 
 x = mycollection.insert_many(mylist)
 
