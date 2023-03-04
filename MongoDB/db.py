@@ -1,5 +1,9 @@
 ''''
 MongoDB is a NoSql database that stores data in the BSON format i.e (Binary JSON)
+
+MongoDB is document-oriented. 
+
+Table in RDBMS is called a Collection in MongoDB.
 '''
 
 import pymongo

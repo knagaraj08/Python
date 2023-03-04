@@ -18,3 +18,6 @@ mycol = mydb["customers"]
 
 for x in mycol.find({}, {"_id":1,"name":1,"address":1 }):
     print(x)
+
+# if "mydatabase" in myclient.list_database_names():
+#     print("It Exits")
