@@ -54,5 +54,6 @@ colletions.update_one(query,updata)
 
 x = colletions.find().sort("USN")  # this sorts the students data in the ascending order
 
+# looping to print the data in the collection
 for i in x:
     print(i)
