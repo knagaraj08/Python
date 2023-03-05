@@ -22,6 +22,7 @@ dbs = client.list_database_names()
 
 # print(db.list_collection_names())
 
+
 def insert_document():
     mycol = db["Books"]
 
@@ -121,6 +122,37 @@ def display_only_cols():
         printer.pprint(i)
 
 
+def update_record_by_id(Book_id):
+
+    from bson.objectid import ObjectId
+
+    _id = ObjectId(Book_id)
+
+    all_update = {
+
+        "$set":{"Shipping Available":False}, #just adding a boolean field
+        "$inc":{"copies":20}
+    }
+
+    collections.update_one({"_id":_id},all_update)
+
+
+def remove_a_field(Book_id):
+
+    from bson.objectid import ObjectId
+
+    _id = ObjectId(Book_id)
+
+    collections.update_one({"_id":_id},{"$unset":{"Shipping Available":""}})
+
+
+def delete_doc_by_id(book_id):
+
+    from bson.objectid import ObjectId
+
+    _id = ObjectId(book_id)
+
+    collections.delete_one({"_id":_id})
 
 
 
@@ -133,4 +165,11 @@ def display_only_cols():
 # count_data()
 # get_books_by_id("640430c83b2f6fcbbccc9ae7")
 # get_copies_range(100,350)
-display_only_cols()
+# display_only_cols()
+
+# update_record_by_id("640430c83b2f6fcbbccc9ae7")
+# remove_a_field("640430c83b2f6fcbbccc9ae7")
+
+# delete_doc_by_id("640430c83b2f6fcbbccc9ae8")
+
+get_books_by_id("640420e1be7e3deb58ff53a2")
