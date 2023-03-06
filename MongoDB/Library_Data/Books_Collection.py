@@ -157,6 +157,18 @@ def delete_doc_by_id(book_id):
 
 
 
+def limit_query():
+    
+    n = int(input("Enter the No of Limited Documnets to be displayed: \t"))
+    s = int(input("Enter the No of Skips to be performed before fetching the Documents: \t"))
+    x = collections.find().limit(n).skip(s)
+    # this displays only limited data
+
+    for i in x:
+        printer.pprint(i)
+
+
+
 
 # insert_document()
 # insert_many_documents()
@@ -172,4 +184,6 @@ def delete_doc_by_id(book_id):
 
 # delete_doc_by_id("640430c83b2f6fcbbccc9ae8")
 
-get_books_by_id("640420e1be7e3deb58ff53a2")
+# get_books_by_id("640420e1be7e3deb58ff53a2")
+
+# limit_query()
