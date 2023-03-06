@@ -78,6 +78,11 @@ def set_popularity():
 
 
 
+def get_distinct():
+
+    print(my_collections.distinct("title"))
+    print(my_collections.distinct("comments"))
+
 def display():
 
     x = my_collections.find()
@@ -90,4 +95,5 @@ def display():
 # group_by_title()
 # set_popularity()
 # group_by_popularity()
-display()
+# display()
+get_distinct()
